@@ -1,0 +1,97 @@
+/* 1. Global Reset & Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Main Container */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    min-height: 550px;
+    display: flex; /* Flexbox enables the side-by-side layout */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* 3. Left Side: Brand (Image/Color) */
+.brand-section {
+    flex: 1; /* Takes up 50% width on desktop */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: none; /* Hidden on mobile by default */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.brand-section h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.brand-section p { font-size: 1.1rem; opacity: 0.9; }
+
+/* 4. Right Side: Form */
+.form-section {
+    flex: 1; /* Takes up remaining space */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-wrapper h2 { margin-bottom: 5px; color: #333; }
+.subtitle { color: #666; margin-bottom: 25px; }
+
+/* Input Styling */
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 5px; color: #333; font-weight: 500; }
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.input-group input:focus { border-color: #764ba2; }
+.input-group small { font-size: 0.8rem; color: #888; }
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-primary:hover { background-color: #5a367e; }
+
+/* Footer Links */
+.privacy-text { font-size: 0.8rem; color: #777; margin-top: 15px; text-align: center; }
+.login-link { text-align: center; margin-top: 20px; font-size: 0.9rem; }
+a { color: #764ba2; text-decoration: none; }
+
+/* 5. RESPONSIVE BREAKPOINT (Tablet/Desktop) */
+/* If screen is bigger than 768px, show the brand section */
+@media (min-width: 768px) {
+    .brand-section {
+        display: flex; /* Turn it back on for desktop */
+    }
+}
